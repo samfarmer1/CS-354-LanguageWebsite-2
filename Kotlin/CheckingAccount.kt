@@ -1,6 +1,6 @@
-class CheckingAccount (number: String, customer: Customer, balance: Double): Account {
+class CheckingAccount (number: String, customer: Customer, balance: Double): Account(number,customer,balance) {
 
-    fun accrue (rate: Double) {
+    override fun accrue (rate: Double) {
 
     }
 }

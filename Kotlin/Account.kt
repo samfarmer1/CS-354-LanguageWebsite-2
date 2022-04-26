@@ -1,19 +1,19 @@
-class Account(val number: String, val customer: String, val balance: Double) {
+open class Account(val number: String, val customer: Customer, var balance: Double) {
 
-    fun accrue(var rate: Double){}
+    open fun accrue(rate: Double){}
 
     fun balance(): Double{
         return balance
     }
-    fun deposit(var amount: Double){
-        balance = balance + amount
+    fun deposit(amount: Double){
+        balance += amount
     }
 
-    fun withdraw(var amount: Double){
-        balance = balance - amount
+    fun withdraw(amount: Double){
+        balance -= amount
     }
     
-    fun toString(): String{
-        return number + " " + customer + " " + balance
+    override fun toString(): String{
+        return "$number $customer $balance"
     }
 }
